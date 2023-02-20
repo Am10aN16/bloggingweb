@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is soulely made by aman kr poddar",
   "main": "index.js",
+  "proxy":"http://localhost:3000/",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
