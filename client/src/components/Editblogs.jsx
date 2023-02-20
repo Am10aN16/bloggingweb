@@ -69,7 +69,7 @@ const Editblogs = () => {
    
     </div>
   )}else{
-  navigate("/login")
+  navigate("/api/login")
   }
 }
 

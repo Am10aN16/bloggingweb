@@ -31,8 +31,6 @@ router.post("/register" , async(req, res) => {
         })
 
         const userRegister = await user.save();
-        console.log(userRegister);
-
         if(userRegister){
             return res.status(201).json({message: "User Registration Success"})
         }else{
@@ -60,7 +58,7 @@ router.post("/signin", async (req, res) => {
         const isMatch = await bcrypt.compare(password, userLogin.password);
   
         const token = await userLogin.generateAuthToken();
-        console.log(token);
+       
   
         res.cookie("jwttoken", token, {
           expires: new Date(Date.now() + 25892000000),

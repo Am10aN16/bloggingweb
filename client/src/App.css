@@ -13,6 +13,27 @@
   }
 }
 
+/* Homepage Css */
+.homepage {
+  /* margin-top: 5px;
+  height: 90vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: #433d3d;
+  /* background: linear-gradient(to left top, #6a1991, #5d41af, #4a5fc8, #317adc, #1293eb); */
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage h1 {
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -22,7 +22,7 @@ const navigate = useNavigate();
   ];
 
 if(state){
- var editBlog =(id, title , tag , blog)=>{
+ var editBlog =(id)=>{
 
      navigate(`/editblogs/${id}`)
  }}else{

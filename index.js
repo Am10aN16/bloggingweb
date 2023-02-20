@@ -17,9 +17,9 @@ app.use(express.json());
 app.use("/api" , require('./routes/auth'));
 app.use("/api" , require('./routes/upload'));
 
-// app.get("/" , (req, res)=>{
-//     res.send("welcome to the server side");
-// })
+app.get("/" , (req, res)=>{
+    res.send("welcome to the server side");
+})
 
 // app.get("/signin", (req, res) => {
 //     res.send(`Hello world from  the signin server`);
