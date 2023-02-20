@@ -55,7 +55,7 @@ const Signup = () => {
      
          <div className="row">
            <button type='submit' onClick={regToast}>Register</button>
-           <NavLink to='/api/login'>Login</NavLink>
+           <NavLink to='/login'>Login</NavLink>
          </div>
      
          </form>
