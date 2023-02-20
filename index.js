@@ -3,7 +3,7 @@ const dotenv = require("dotenv")
 const app = express();
 const cors = require("cors")
 const fileUpload = require("express-fileupload");
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 dotenv.config({ path: './.env' });
 const dbconnection = require("./db/conn");
 
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV=== 'production') {
 
 dbconnection().then(()=>{
     app.listen(PORT , ()=>{
-        console.log(`Server is listening to port ${PORT}`);
+        console.log('Server is listening to port' ,PORT);
     });
 })
 
