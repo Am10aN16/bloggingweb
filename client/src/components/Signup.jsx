@@ -33,7 +33,7 @@ const Signup = () => {
            placeholder="Your Name" value={user.name} onChange={onChangeInput}/>
 
          <input type="text" name="username" required
-           placeholder="Username" value={user.username} onChange={onChangeInput}/>
+           placeholder="UserName" value={user.username} onChange={onChangeInput}/>
      
            <input type="email" name="email" required
            placeholder="Your Email" value={user.email} onChange={onChangeInput}/>
