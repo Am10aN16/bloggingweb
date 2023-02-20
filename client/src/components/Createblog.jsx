@@ -24,9 +24,9 @@ const Createblog = () => {
     
         try {
       
-          await axios.post('/api/addblogs',{...post})
+          await axios.post('https://bloggers-tweet.onrender.com/api/addblogs',{...post})
            alert("Post success")
-          navigate('/api/blogs');
+          navigate('https://bloggers-tweet.onrender.com/api/blogs');
     
     
         } catch (err) {

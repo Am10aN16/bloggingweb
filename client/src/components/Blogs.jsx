@@ -24,16 +24,16 @@ const navigate = useNavigate();
 if(state){
  var editBlog =(id, title , tag , blog)=>{
 
-     navigate(`/editblogs/${id}`)
+     navigate(`https://bloggers-tweet.onrender.com/editblogs/${id}`)
  }}else{
-    navigate("/login")
+    navigate("https://bloggers-tweet.onrender.com/login")
  }
 
   const blogsPage = async() => {
    
     try {
       
-      const response = await axios.get('/api/blogs')
+      const response = await axios.get('https://bloggers-tweet.onrender.com/api/blogs')
       setBlogs(response.data);
     } catch (error) {
       console.log(error);
@@ -45,9 +45,9 @@ if(state){
   },[]);
 
 const delBlog = async(id)=>{
-await axios.delete(`/api/delblog/${id}`);
+await axios.delete(`https://bloggers-tweet.onrender.com/api/delblog/${id}`);
 alert(" Post Successfully deleted")
-navigate("/api/blogs")
+navigate("https://bloggers-tweet.onrender.com/api/blogs")
 }
 
 

@@ -20,7 +20,7 @@ const Signup = () => {
          e.preventDefault()
      
          try {
-           await axios.post('/api/register',{...user})
+           await axios.post('https://bloggers-tweet.onrender.com/api/register',{...user})
      
            // localStorage.setItem('firstLogin', true)
            window.location.href = "/login";

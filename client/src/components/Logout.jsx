@@ -8,7 +8,7 @@ const Logout = () => {
 
     const navigate = useNavigate();
     useEffect(()=>{
-        fetch('/api/logout',{
+        fetch('https://bloggers-tweet.onrender.com/api/logout',{
             method:"GET",
             headers:{
                 Accept: "application/json",
