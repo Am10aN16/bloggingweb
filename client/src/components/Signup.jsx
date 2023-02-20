@@ -1,30 +1,24 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const [user,setUser]= useState({
         name:'', email:'', username:'',phone:'', password:'' ,cpassword:''
        })
-     
+     const navigate = useNavigate();
        const onChangeInput = e =>{
          const {name,value} = e.target;
          setUser({...user,[name]:value})
        }
-     
-       const regToast = () => {
-    alert("Registration success");
-     }
-     
+       
        const registerSubmit = async e =>{
          e.preventDefault()
      
          try {
            await axios.post('/api/register',{...user})
-     
-           // localStorage.setItem('firstLogin', true)
-           window.location.href = "/login";
-     
+          navigate("/login")
+          alert("Registration success");
      
          } catch (err) {
            alert(err.response.data.msg)
@@ -54,7 +48,7 @@ const Signup = () => {
            placeholder="Your Confirm Password" value={user.cpassword} onChange={onChangeInput} />
      
          <div className="row">
-           <button type='submit' onClick={regToast}>Register</button>
+           <button type='submit' >Register</button>
            <NavLink to='/login'>Login</NavLink>
          </div>
      
