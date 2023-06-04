@@ -21,7 +21,7 @@ code {
   color: white !important;
 }
 .purple{
-  background-color: #6667AB !important;
+  background-color: #5d5d53 !important;
 }
 .navbar-light .navbar-toggler {
   color: white;
@@ -173,3 +173,10 @@ code {
       margin: 10px 10px;
   }
   }
+
+  @media (min-width: 992px){
+  .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: right;
+}}

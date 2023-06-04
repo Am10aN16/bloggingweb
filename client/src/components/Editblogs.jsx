@@ -11,44 +11,64 @@ const Editblogs = () => {
       title: `${title}`, blog:`${blog}`, tag:`${tag}`
     })
  
-  
+
+ 
     const blogsPage = async() => {
       try {     
         const response = await axios.get('/api/blogs')
-        console.log(response.data)
-        // let res = JSON.stringify(response.data)
-      response.data.filter(id=> id).map(data => console.log(data.id))
-        // setData(res.includes(id))
+        console.log("print");
+     
+        console.log(response.data);
+      if(id){
+        response.data.forEach(blog => {
+          console.log(blog._id);
+          console.log(id);
+          if(blog._id === id){
+             setData({
+                    title: blog.title,
+                    blog: blog.blog,
+                    tag: blog.tag
+                  }
+                  )
+          }
+
+        })
+      }
       } catch (error) {
         console.log(error);
       }
     } 
-    console.log();
+
   
     useEffect(()=>{
      blogsPage();
     },[]);
-      //  console.log(title, tag, blog);
+     
   
       const onChangeInput = e =>{
         const {name,value} = e.target;
+      
         setData({...data,[name]:value})
+        
       }
 
       const updateSubmit = async e =>{
         e.preventDefault()
     
         try {
-        
-          await axios.put(`/api/updateblog/${id}`,{...data})
-           alert("Update success")          
+           await axios.put(`/api/updateblog/${id}`)
+          
+           alert("Update success")      
+            
           navigate('/api/blogs');
           } catch (err) {
           console.log(err);
           }
         }
+   
      if(state){
   return (
+    
     <div className='login-page'>
     <h2>Edit Blog</h2>
     <form onSubmit={updateSubmit}>

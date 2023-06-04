@@ -23,7 +23,7 @@ const Routing = ()=>{
     <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/api/blogs' element={<Blogs/>} />
-        <Route path='/editblogs/:id' element={<Editblogs />} />
+        <Route path='/updateblog/:id' element={<Editblogs />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Signup />} />
         <Route path='logout' element={<Logout />} />

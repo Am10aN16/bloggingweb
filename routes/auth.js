@@ -134,8 +134,10 @@ try {
   router.put("/updateblog/:id" , async(req , res) => {
     try {
       const {category , title , tag , blog} = req.body
+      console.log(category)
       await Blog.findByIdAndUpdate({_id:req.params.id} , {
         category , title , tag , blog
+
       })
 
       res.json({msg: "Updated the blog"})

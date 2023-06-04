@@ -23,8 +23,7 @@ const navigate = useNavigate();
 
 if(state){
  var editBlog =(id)=>{
-
-     navigate(`/editblogs/${id}`)
+     navigate(`/updateblog/${id}`)
  }}else{
     navigate("/login")
  }
