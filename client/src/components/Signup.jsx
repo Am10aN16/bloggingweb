@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
+import Footer from './Footer';
+import Swal from 'sweetalert2'
 
 const Signup = () => {
     const [user,setUser]= useState({
@@ -16,16 +18,29 @@ const Signup = () => {
          e.preventDefault()
      
          try {
+          Swal.fire(
+            'Great job!',
+            "Welcome to Blogger's Tweet!",
+            'success'
+          )
            await axios.post('/api/register',{...user})
+
           navigate("/login")
-          alert("Registration success");
+          
      
          } catch (err) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            
+          })
            alert(err.response.data.msg)
          }
        }
      
        return (
+        <>
          <div className='login-page'>
          <form onSubmit={registerSubmit}>
          <h2>Register</h2>
@@ -55,6 +70,8 @@ const Signup = () => {
          </form>
     
          </div>
+         <Footer/>
+         </>
        )
      }
 

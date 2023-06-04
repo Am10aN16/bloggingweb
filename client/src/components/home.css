@@ -86,7 +86,7 @@
   
   .card {
     display: flex;
-    /* max-width: 320px; */
+    /* max-width: 330px; */
     flex-direction: column;
     /* align-items: center; */
   
@@ -106,18 +106,36 @@
   }
   
   .card:nth-of-type(1) .card-img {
-    background-image: url(https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-image: url(../assets/foodblog.jpg);
   }
   
   .card:nth-of-type(2) .card-img {
-    background-image: url(https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1606&q=80);
+    background-image: url(../assets/travelblog.jpg);
   }
   
   .card:nth-of-type(3) .card-img {
-    background-image: url(https://images.unsplash.com/photo-1628746404106-4d3843b231b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2F2aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60);
+    background-image: url(../assets/businessblog.jpg);
   }
   
-  .card:nth-of-type(4) .card-img {
-    background-image: url(https://images.unsplash.com/photo-1496429862132-5ab36b6ae330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80);
+  @media(max-width:600px){
+    a {
+      display: inline-block;
+      padding: 0;
+    }
+  }
+  @media(max-width:300px){
+    .navbar-brand {
+      font-size: 1rem !important;
+    }
+  }
+
+ .card button{
+  width: 150px;
+  background: rgb(63 63 63);
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   }
   
+ 

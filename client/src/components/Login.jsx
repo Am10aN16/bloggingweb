@@ -3,6 +3,8 @@ import React, { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { UserContext } from '../App'
 import "./Login.css"
+import Footer from './Footer'
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const {dispatch} = useContext(UserContext)
@@ -24,19 +26,29 @@ const Login = () => {
           await axios.post('/api/signin',{...user})
     
           localStorage.setItem('firstLogin', true)
-           alert("Login success")
+          Swal.fire(
+            'Great job!',
+            "You signed in to Blogger's Tweet!",
+            'success'
+          )
           
            dispatch({type:"USER", payload:true})
           navigate('/');
     
     
         } catch (err) {
-        
+         
+Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Something went wrong!',
+})
           console.log(err);
           }
         }
      
   return (
+    <>
     <div className='login-page'>
     <h2>Login</h2>
     <form onSubmit={loginSubmit}>
@@ -54,6 +66,8 @@ const Login = () => {
     </form>
    
     </div>
+    <Footer/>
+    </>
   )
 }
 

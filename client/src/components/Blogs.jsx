@@ -3,6 +3,8 @@ import axios from 'axios'
 import "../index.css"
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
+import Footer from "./Footer";
+import Swal from 'sweetalert2'
 
 const Blogs= () =>
 {
@@ -11,14 +13,7 @@ const Blogs= () =>
 const navigate = useNavigate();
 
   const colours = [
-    "#5B84B1FF",
-    "#2A363B ",
-    "#A7226E",
-    "#FF847C",
-    "#45ADA8",
-    "#E84A5F",
-    "#FFBF00",
-    "#6495ED"
+  "rgb(63 63 63)"
   ];
 
 if(state){
@@ -44,8 +39,25 @@ if(state){
   },[]);
 
 const delBlog = async(id)=>{
-await axios.delete(`/api/delblog/${id}`);
-alert(" Post Successfully deleted")
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+      await axios.delete(`/api/delblog/${id}`);
+    }
+  })
+
 navigate("/api/blogs")
 }
 
@@ -70,7 +82,7 @@ navigate("/api/blogs")
       
     </div>
     ))}
-      
+      <Footer/>
     </>
   );
 };

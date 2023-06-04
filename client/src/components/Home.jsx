@@ -1,11 +1,13 @@
 import React , {useEffect , useState} from "react";
 import "./home.css"
+import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const Home = () => {
 
   const[userName, setuserName] = useState('');
   const [show, setShow] = useState(false);
-
+  const navigate = useNavigate()
   const  userHomePage = async() => {
     try {
       const res= await fetch('/getdata',{
@@ -25,6 +27,8 @@ const Home = () => {
     }
   }
 
+  const learn =()=>{navigate('/api/blogs')}
+
 useEffect(()=>{
   userHomePage();
 },[]);
@@ -32,56 +36,44 @@ useEffect(()=>{
   return (
     <>
        
-       <section class="parallax-container">
+       <section className="parallax-container">
       <h1>Blogger's Tweet</h1>
       <p>
-        Cerro Torre is a mountain of sheer beauty whose spectacular attributes
-        make it an unique gem in Argentina.
+      "Blogger's Tweet" Where concise meets insightful, unleashing the power of words in a single tweet.
       </p>
     </section>
 
-    <section class="buffer"></section>
+    <section className="buffer"></section>
 
-    <section class="parallax-container parallax-container2">
-      <div class="card width-card">
-        <div class="card-img"></div>
-        <h3>Hiking</h3>
+    <section className="parallax-container parallax-container2">
+      <div className="card width-card" style={{maxWidth:330}}>
+        <div className="card-img"></div>
+        <h3>Food Blogging</h3>
         <p>
-          Explore the myriad of trails through the mountaineous. Choose the
-          difficulty appropriate to your fitness level.
+        "Savor the flavors, indulge in culinary adventures - join our food blogging community and let your taste buds be your guide."
         </p>
-        <a href="https">Learn more</a>
+        <button type="submit" onClick={learn}>Read more</button>
       </div>
-      <div class="card width-card">
-        <div class="card-img"></div>
-        <h3>Rock climbing</h3>
+      <div className="card width-card" style={{maxWidth:330}}>
+        <div className="card-img"></div>
+        <h3>Travel Blogging</h3>
         <p>
-          The goal is to reach the summit of a formation or the endpoint of a
-          usually pre-defined route without falling
+          "Escape the ordinary and embrace the extraordinary as we ignite your wanderlust and guide you through unforgettable journeys across the globe."
         </p>
-        <a href="https">Learn more</a>
+        <button type="submit" onClick={learn}>Read more</button>
       </div>
-      <div class="card width-card">
-        <div class="card-img"></div>
-        <h3>Caving</h3>
+      <div className="card width-card" style={{maxWidth:330}}>
+        <div className="card-img"></div>
+        <h3>Business Blogging</h3>
         <p>
-          Exploring underground through networks of tunnels and passageways,
-          which can be natural or artificial.
+        "Unlock the secrets of success, gain valuable insights, and navigate the ever-changing world of business through our informative and inspiring business blogging platform."
         </p>
-        <a href="https">Learn more</a>
+        <button type="submit" onClick={learn}>Read more</button>
       </div>
-      {/* <div class="card">
-        <div class="card-img"></div>
-        <h3>Paragliding</h3>
-        <p>
-          Get lift off from the mountain and enjoy through the splendor of the
-          surrounding landscape by parachute.
-        </p>
-        <a href="https">Learn more</a>
-      </div> */}
+     
     </section>
 
-    <section class="buffer"></section>
+   <Footer/>
 
     </>
   );

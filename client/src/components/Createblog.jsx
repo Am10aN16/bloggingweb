@@ -1,11 +1,12 @@
 import axios from 'axios'
-import React, { useContext, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { UserContext } from '../App'
+import React, { useState } from 'react'
+import {  useNavigate } from 'react-router-dom'
 import "./Login.css"
+import Footer from './Footer'
+import Swal from 'sweetalert2'
 
 const Createblog = () => {
-    const {state} = useContext(UserContext)
+  
     const navigate = useNavigate();
     const [post,setPost]= useState({
     category:"",
@@ -25,7 +26,11 @@ const Createblog = () => {
         try {
       
           await axios.post('/api/addblogs',{...post})
-           alert("Post success")
+          Swal.fire(
+            'Cool!',
+            'You just created a Blog!',
+            'success'
+          )
           navigate('/api/blogs');
     
     
@@ -36,8 +41,9 @@ const Createblog = () => {
         }
      
   return (
+<>
     <div className='login-page'>
-    <h2>Login</h2>
+    <h2>Create Post</h2>
     <form onSubmit={postSubmit}>
       <input type="text" name="category" required
       placeholder="Post Category" value={post.category} onChange={onChangeInput}/>
@@ -56,6 +62,8 @@ const Createblog = () => {
     </form>
    
     </div>
+    <Footer/>
+    </>
   )
 }
 

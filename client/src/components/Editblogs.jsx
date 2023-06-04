@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../App';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Footer from './Footer';
+import Swal from 'sweetalert2'
 
 const Editblogs = () => {
     const {state} = useContext(UserContext)
@@ -56,11 +58,30 @@ const Editblogs = () => {
         e.preventDefault()
     
         try {
-           await axios.put(`/api/updateblog/${id}`)
+          Swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+          }).then(async(result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire('Saved!', '', 'success')
+              await axios.put(`/api/updateblog/${id}`,
+              {...data}
+              )
+              navigate('/api/blogs');
+            } else if (result.isDenied) {
+              Swal.fire('Changes are not saved', '', 'info')
+              navigate('/api/blogs');
+            }
+          })
           
-           alert("Update success")      
+          
+          //  alert("Update success")      
             
-          navigate('/api/blogs');
+          // navigate('/api/blogs');
           } catch (err) {
           console.log(err);
           }
@@ -68,7 +89,7 @@ const Editblogs = () => {
    
      if(state){
   return (
-    
+    <>
     <div className='login-page'>
     <h2>Edit Blog</h2>
     <form onSubmit={updateSubmit}>
@@ -88,6 +109,8 @@ const Editblogs = () => {
     </form>
    
     </div>
+    <Footer/>
+    </>
   )}else{
   navigate("/api/login")
   }
