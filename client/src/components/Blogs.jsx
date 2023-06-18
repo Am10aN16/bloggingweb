@@ -58,7 +58,7 @@ const delBlog = async(id)=>{
     }
   })
 
-navigate("/api/blogs")
+navigate("/blogs")
 }
 
 

@@ -71,7 +71,7 @@ const Editblogs = () => {
               await axios.put(`/api/updateblog/${id}`,
               {...data}
               )
-              navigate('/api/blogs');
+              navigate('/blogs');
             } else if (result.isDenied) {
               Swal.fire('Changes are not saved', '', 'info')
               navigate('/blogs');

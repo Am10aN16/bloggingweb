@@ -31,6 +31,7 @@ const Navbar = () => {
         to='/blogs'
       >Blogs</NavLink>
         </li>
+        
         { state ? (
        <>
         <li className="nav-item">
