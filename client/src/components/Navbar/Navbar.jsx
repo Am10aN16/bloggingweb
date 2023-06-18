@@ -28,7 +28,7 @@ const Navbar = () => {
         className='nav-link white'
         style={{ color: "black" }}
         aria-current='page'
-        to='/api/blogs'
+        to='/blogs'
       >Blogs</NavLink>
         </li>
         { state ? (

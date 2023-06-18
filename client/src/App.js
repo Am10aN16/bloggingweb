@@ -22,7 +22,7 @@ const Routing = ()=>{
   return(
     <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/api/blogs' element={<Blogs/>} />
+        <Route path='/blogs' element={<Blogs/>} />
         <Route path='/updateblog/:id' element={<Editblogs />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Signup />} />

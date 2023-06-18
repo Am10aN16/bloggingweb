@@ -31,7 +31,7 @@ const Createblog = () => {
             'You just created a Blog!',
             'success'
           )
-          navigate('/api/blogs');
+          navigate('/blogs');
     
     
         } catch (err) {

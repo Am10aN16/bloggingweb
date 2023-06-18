@@ -27,7 +27,7 @@ const Home = () => {
     }
   }
 
-  const learn =()=>{navigate('/api/blogs')}
+  const learn =()=>{navigate('/blogs')}
 
 useEffect(()=>{
   userHomePage();
