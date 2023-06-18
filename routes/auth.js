@@ -135,7 +135,7 @@ try {
     try {
       const {category , title , tag , blog} = req.body
       await Blog.findByIdAndUpdate({_id:req.params.id} , {
-        category , title , tag , blog
+        category , title , tag , blog 
       })
 
       res.json({msg: "Updated the blog"})

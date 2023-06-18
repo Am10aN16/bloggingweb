@@ -6,6 +6,7 @@ const fileUpload = require("express-fileupload");
 const PORT = process.env.PORT || 5000;
 dotenv.config({ path: './.env' });
 const dbconnection = require("./db/conn");
+const path = require("path");
 
 app.use(cors());
 app.use(fileUpload({

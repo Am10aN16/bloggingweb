@@ -3,7 +3,7 @@
 }
 
 .new_footer_area {
-    background: #fbfbfd;
+    background: #dad8d4;
 }
 
 .heart{
@@ -35,6 +35,7 @@
 .new_footer_top .company_widget .f_subscribe_two .btn_get {
     border-width: 1px;
     margin-top: 20px;
+    border: 1px solid;
 }
 .btn_get_two:hover {
     background: transparent;
@@ -105,6 +106,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
     background: rgb(63 63 63);
     border-color: rgb(63 63 63);
     color: #fff;
+    
 }
 
 .btn_get_two:hover {
