@@ -1,4 +1,4 @@
-import React, { createContext,useReducer } from "react";
+import React, { createContext,useReducer} from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
@@ -36,8 +36,10 @@ const Routing = ()=>{
 
 
 const App = () => {
- 
+
   const [state, dispatch] = useReducer(reducer, initialState)
+
+
 
   return (
       <>

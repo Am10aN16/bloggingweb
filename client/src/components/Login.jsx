@@ -12,6 +12,7 @@ const Login = () => {
     const [user,setUser]= useState({
         email:'', password:''
       })
+      const[token ,setToken] = useState(false);
     
       const onChangeInput = e =>{
         const {name,value} = e.target;
@@ -26,6 +27,12 @@ const Login = () => {
           await axios.post('/api/signin',{...user})
     
           localStorage.setItem('firstLogin', true)
+          setToken(true);
+          setTimeout(()=>{
+            setToken(false)
+        },10 * 60 * 1000)
+    
+          
           Swal.fire(
             'Great job!',
             "You signed in to Blogger's Tweet!",
