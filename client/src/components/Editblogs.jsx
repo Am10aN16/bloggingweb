@@ -18,13 +18,8 @@ const Editblogs = () => {
     const blogsPage = async() => {
       try {     
         const response = await axios.get('/api/blogs')
-        console.log("print");
-     
-        console.log(response.data);
       if(id){
         response.data.forEach(blog => {
-          console.log(blog._id);
-          console.log(id);
           if(blog._id === id){
              setData({
                     title: blog.title,

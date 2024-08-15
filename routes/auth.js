@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
 const User = require("../models/userSchema");
 const Blog  = require("../models/BlogSchema");
-const Authenticate = require("../middleware/Authenticate");
+const authenticate = require("../middleware/Authenticate");
 
 
 //route to register users
@@ -68,7 +68,8 @@ router.post("/signin", async (req, res) => {
         if (!isMatch) {
           res.status(400).json({ error: "Invalid Credentials" });
         } else {
-          res.json({ message: "User Sign in Successfull" });
+          res.json({ message: "User Sign in Successfull" 
+          });
         }
       } else {
         res.status(400).json({ error: "Invalid Credentials" });
@@ -86,7 +87,7 @@ router.post("/signin", async (req, res) => {
 
 
   //addblogs  to the database
-  router.post("/addblogs" , async(req,res) => {
+router.post("/addblogs",authenticate, async(req,res) => {
     const {category , title , tag , blog} = req.body
 
     if(!category || !title || !tag || !blog)
@@ -121,7 +122,7 @@ try {
   })
 
   //deleteblogs from the database
-  router.delete("/delblog/:id" , async(req, res)=>{
+router.delete("/delblog/:id", authenticate, async(req, res)=>{
     try {
       await Blog.findByIdAndDelete(req.params.id)
       res.json({msg:"Deleted the blog"})
@@ -131,7 +132,7 @@ try {
   })
 
   //update the blogs to the database
-  router.put("/updateblog/:id" , async(req , res) => {
+router.put("/updateblog/:id", authenticate, async(req , res) => {
     try {
       const {category , title , tag , blog} = req.body
       await Blog.findByIdAndUpdate({_id:req.params.id} , {
@@ -147,7 +148,7 @@ try {
   })
 
   //post comments to the database
-  router.post("/comments/:id" , async(req, res) => {
+router.post("/comments/:id", async(req, res) => {
     try {
       const {username ,  comment} = req.body;
 

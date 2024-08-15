@@ -1,44 +1,18 @@
-import React , {useEffect , useState} from "react";
+import React from "react";
 import "./home.css"
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 
 const Home = () => {
-
-  const[userName, setuserName] = useState('');
-  const [show, setShow] = useState(false);
   const navigate = useNavigate()
-  const  userHomePage = async() => {
-    try {
-      const res= await fetch('/getdata',{
-        method:"GET",
-        headers:{
-          "Content-Type":"application/json"
-        },
-      });
-
-
-      const data= await res.json();
-      setuserName(data.name);
-      setShow(true);
-
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   const learn =()=>{navigate('/blogs')}
-
-useEffect(()=>{
-  userHomePage();
-},[]);
 
   return (
     <>
        
        <section className="parallax-container">
-      <h1>Blogger's Tweet</h1>
-      <p>
+        <h1 style={{ color: 'rgb(255, 224, 224)'}}>Blogger's Tweet</h1>
+        <p style={{ color: 'rgb(255, 224, 224)' }}>
       "Blogger's Tweet" Where concise meets insightful, unleashing the power of words in a single tweet.
       </p>
     </section>

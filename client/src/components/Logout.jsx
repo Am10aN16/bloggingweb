@@ -4,7 +4,7 @@ import { UserContext } from "../App";
 const Logout = () => {
     //promises
 
-    const {state, dispatch} = useContext(UserContext)
+    const {dispatch} = useContext(UserContext)
 
     const navigate = useNavigate();
     useEffect(()=>{
