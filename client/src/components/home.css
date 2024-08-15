@@ -21,13 +21,11 @@
   
     /*  this is where the magic happens:  */
     background-attachment: fixed;
-  
     background-image: url(../assets/travelblog.jpg);
     background-position: center;
     background-size: cover;
     color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 3rem;
     text-align: center;
   }
   
@@ -39,8 +37,7 @@
   
   .parallax-container2 {
     flex-direction: row;
-    flex-wrap: wrap;
-  
+    flex-wrap: wrap; 
     padding: 6rem 0;
     background-image: url(../assets/back3.png);
     gap: 1.6em;
