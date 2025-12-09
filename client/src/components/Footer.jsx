@@ -43,10 +43,10 @@ const Footer = () => {
                             <div className="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style={{visibility: "visible", animationDelay:" 0.8s", animation: "fadeInLeft"}}>
                                 <h3 className="f-title f_600 t_color f_size_18">Social Media</h3>
                                 <div className="f_social_icon">
-                                    <a href="https://www.facebook.com/aman.sah.397948"  className="fab fa-facebook sociallink" > </a>
-                                    <a href="https://twitter.com/aman_sah1" className="fab fa-twitter sociallink"> </a>
-                                          <a href="https://www.linkedin.com/in/amanpoddar10/" className="fab fa-linkedin sociallink"> </a>
-                                          <a href="https://www.instagram.com/jr_cypher_ak/" className="fab fa-instagram sociallink"> </a>
+                                    <a href="#"  className="fab fa-facebook sociallink" > </a>
+                                    <a href="#" className="fab fa-twitter sociallink"> </a>
+                                          <a href="#" className="fab fa-linkedin sociallink"> </a>
+                                          <a href="#" className="fab fa-instagram sociallink"> </a>
                                 </div>
                             </div>
                         </div>
@@ -61,11 +61,11 @@ const Footer = () => {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-sm-6">
-                            <p className="mb-0 f_400" style={{padding:0}}>©2024 All rights reserved.</p>
+                            <p className="mb-0 f_400" style={{padding:0}}>©2025 All rights reserved.</p>
                         </div>
-                        <div className="col-lg-6 col-sm-6 text-right">
+                        {/* <div className="col-lg-6 col-sm-6 text-right">
                                   <p>Made with <i className="fa-solid fa-heart heart"> </i> by <a href="https://www.linkedin.com/in/amanpoddar10/" rel="noreferrer" target="_blank" style={{padding:"3px"}}> Aman Poddar</a></p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
